@@ -1,0 +1,19 @@
+<div class="ui form" [style.visibility]="visible ? 'visible' : 'hidden'">
+  <div class="fields">
+    <div *ngIf="label" class="four wide field" [ngClass]="{required: required}">
+      <label class="ui label">{{label | zcTranslate}}</label>
+    </div>
+    <div [ngClass]="{twelve: label, sixteen: !label}" class="wide field">
+      <div class="ui fluid selection dropdown" #dropdown [tabindex]="tabindex" [ngClass]="{search: search, disabled: disabled, error: !validate()}"
+        [zcHint]="!validate() ? ((control.errors | zcKeys)[0] | zcTranslate) : null">
+        <i *ngIf="icon" class="{{icon}} icon"></i>
+        <input #value name="user" type="hidden" [formControl]="control">
+        <i class="dropdown icon"></i>
+        <div class="default text">Select Friend</div>
+        <div class="menu">
+          <ng-content></ng-content>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

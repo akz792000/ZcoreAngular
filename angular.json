@@ -24,9 +24,20 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/semantic/dist/semantic.rtl.min.css",
+              "src/assets/calendar/jquery.calendars.picker.css",              
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/jquery.min.js",
+              "src/assets/semantic/dist/semantic.min.js",
+              "src/assets/zcore.browser.js",
+              "src/assets/calendar/jquery.calendars.min.js",
+              "src/assets/calendar/jquery.calendars.plus.min.js",
+              "src/assets/calendar/jquery.calendars.persian.min.js",
+              "src/assets/calendar/jquery.calendars.persian-fa.min.js",
+              "src/assets/calendar/jquery.calendars.picker.js"              
+            ]
           },
           "configurations": {
             "production": {
@@ -84,9 +95,20 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/semantic/dist/semantic.rtl.min.css",
+              "src/assets/calendar/jquery.calendars.picker.css",              
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/jquery/dist/jquery.min.js",
+              "src/assets/semantic/dist/semantic.min.js",
+              "src/assets/zcore.browser.js",
+              "src/assets/calendar/jquery.calendars.min.js",
+              "src/assets/calendar/jquery.calendars.plus.min.js",
+              "src/assets/calendar/jquery.calendars.persian.min.js",
+              "src/assets/calendar/jquery.calendars.persian-fa.min.js",
+              "src/assets/calendar/jquery.calendars.picker.js"              
+            ]
           }
         },
         "lint": {

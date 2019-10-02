@@ -1,0 +1,16 @@
+<div class="ui form" [style.visibility]="visible ? 'visible' : 'hidden'">
+  <div class="fields">
+    <div *ngIf="label" class="four wide field" [ngClass]="{required: required}">
+      <label class="ui label">{{label | zcTranslate}}</label>
+    </div>
+    <div [ngClass]="{twelve: label, sixteen: !label, error: !validate()}" class="wide field">
+      <div class="ui input left" [ngClass]="{'icon': icon}">
+        <input #input [attr.type]="type" [attr.disabled]="disabled ? disabled : null" [attr.readonly]="readonly ? readonly : null"
+          [attr.tabindex]="tabindex" attr.placeholder="{{placeholder | zcTranslate}}" [attr.size]="size" [attr.maxlength]="maxlength"
+          [formControl]="control" [zcMask]="mask" [zcHint]="!validate() ? ((control.errors | zcKeys)[0] | zcTranslate) : null" (focus)="focus($event)"
+          (blur)="blur($event)" (keydown)="keydown($event)" (keypress)="keypress($event)" (paste)="paste($event)">
+        <i *ngIf="icon" class="{{icon}} icon"></i>
+      </div>
+    </div>
+  </div>
+</div>

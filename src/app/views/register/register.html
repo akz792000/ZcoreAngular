@@ -1,0 +1,29 @@
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <form class="ui form" [formGroup]="form">
+      <div class="ui segment">
+        <div class="field">
+          <zc-image src="../../../assets/images/register.png" height="160" width="160"></zc-image>
+        </div>
+        <div class="field">
+          <zc-input icon="user" required="true" label="{{'firstname'}}" [control]="form.controls.firstname"></zc-input>
+        </div>
+        <div class="field">
+          <zc-input label="{{'lastname'}}" [control]="form.controls.lastname"></zc-input>
+        </div>
+        <div class="field">
+          <zc-input label="{{'username'}}" [control]="form.controls.username"></zc-input>
+        </div>
+        <div class="field">
+          <zc-input label="{{'password'}}" [control]="form.controls.password"></zc-input>
+        </div>
+        <div class="field">
+          <zc-button (click)="onSubmit()" class="fluid large teal submit" [disabled]="!form.valid" caption="{{'register'}}"></zc-button>
+        </div>
+        <div class="field">
+          <a [routerLink]="['/login']" class="fluid large">{{'login'}}</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

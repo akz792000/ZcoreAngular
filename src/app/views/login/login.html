@@ -1,0 +1,69 @@
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <form class="ui form" [formGroup]="form">
+      <div class="ui segment">
+        <div class="field">
+          <zc-image src="../../../assets/images/login.png" height="160" width="160"></zc-image>
+        </div>
+
+        <div class="field">
+          <zc-input icon="user" [control]="form.controls.username" placeholder="{{'username'}}"></zc-input>
+        </div>
+        <div class="field">
+          <zc-input icon="lock" [control]="form.controls.password" placeholder="{{'password'}}"></zc-input>
+        </div>
+        <div class="field">
+          <zc-button (click)="form.valid ? onSubmit() : null" class="fluid large teal" [disabled]="!form.valid" caption="{{'login'}}"></zc-button>
+        </div>
+        <div class="field">
+          <a [routerLink]="['/register']" class="fluid large">{{'register'}}</a>
+        </div>
+        
+        <div class="field">
+          <zc-calendar (onChange)="sample($event)" icon="lock" [control]="form.controls.calendar" placeholder="{{'calendar'}}"></zc-calendar>
+        </div>
+        
+
+        
+        <div class="field">
+          <zc-dropdown [search]="false" (onChange)="sample($event)" class="fluid large" title="{{'login'}}" [control]="form.controls.dropdown"
+            [readonly]="true" label="{{'username'}}">
+            <div class="item" data-value="jenny">Jenny Hess</div>
+            <div class="item" data-value="elliot">Elliot Fu</div>
+            <div class="item" data-value="stevie">Stevie Feliciano</div>
+            <div class="item" data-value="christian">Christian</div>
+            <div class="item" data-value="matt">Matt</div>
+            <div class="item" data-value="justen">Justen Kitsune</div>
+          </zc-dropdown>
+        </div>
+        
+
+        <div class="field">
+          <zc-multiselect [search]="false" (onChange)="sample($event)" class="fluid large" title="{{'login'}}" [control]="form.controls.dropdown"
+            [readonly]="true" label="{{'username'}}" [maxSelections]="2" [useLabels]="false">
+            <option value="">Skills</option>
+            <option value="angular">Angular</option>
+            <option value="css">CSS</option>
+            <option value="design">Graphic Design</option>
+            <option value="ember">Ember</option>
+            <option value="html">HTML</option>
+            <option value="ia">Information Architecture</option>
+            <option value="javascript">Javascript</option>
+            <option value="mech">Mechanical Engineering</option>
+            <option value="meteor">Meteor</option>
+            <option value="node">NodeJS</option>
+            <option value="plumbing">Plumbing</option>
+            <option value="python">Python</option>
+            <option value="rails">Rails</option>
+            <option value="react">React</option>
+            <option value="repair">Kitchen Repair</option>
+            <option value="ruby">Ruby</option>
+            <option value="ui">UI Design</option>
+            <option value="ux">User Experience</option>
+          </zc-multiselect>
+        </div>
+        
+      </div>
+    </form>
+  </div>
+</div>

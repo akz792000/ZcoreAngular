@@ -1,0 +1,6 @@
+<button #button type="button" class="ui {{class}} button field" [style.visibility]="visible ? 'visible' : 'hidden'" [attr.disabled]="disabled ? 'disabled' : null"
+  [tabindex]="tabindex" [ngClass]="{icon: primary || secondary}" (click)="click($event)">
+  <i *ngIf="primary" class="{{primary}} icon"></i>
+  {{caption | zcTranslate}}
+  <i *ngIf="secondary" class="{{secondary}} icon"></i>
+</button>

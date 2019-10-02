@@ -1,0 +1,7 @@
+<div *ngIf="visible" class="ui message {{class}}" [ngClass]="{'icon': icon}" >
+  <i class="close icon" (click)="close($event)"></i>
+  <i *ngIf="icon" class="{{icon}} icon"></i>
+  <div class="content">
+    {{content | zcTranslate}}
+  </div>
+</div>

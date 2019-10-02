@@ -1,0 +1,15 @@
+<div class="ui form" [style.visibility]="visible ? 'visible' : 'hidden'">
+  <div class="fields">
+    <div *ngIf="label" class="four wide field" [ngClass]="{required: required}">
+      <label class="ui label">{{label | zcTranslate}}</label>
+    </div>
+    <div [ngClass]="{twelve: label, sixteen: !label}" class="wide field" (keyup.delete)="clean()">
+
+
+      <select #multiselect multiple="" class="ui fluid search dropdown" >
+          <ng-content></ng-content>
+        </select>
+
+    </div>
+  </div>
+</div>

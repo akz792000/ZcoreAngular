@@ -1,0 +1,9 @@
+zc-bar  {
+    display: block;
+    position: absolute; 
+    margin: 0px;
+    top: 0px;
+    width: 100%; 
+    z-index: 10000; 
+    font-weight: bold;
+}

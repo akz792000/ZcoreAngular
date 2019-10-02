@@ -1,0 +1,16 @@
+<div class="ui form" [style.visibility]="visible ? 'visible' : 'hidden'">
+  <div class="fields">
+    <div *ngIf="label" class="four wide field" [ngClass]="{required: required}">
+      <label class="ui label">{{label | zcTranslate}}</label>
+    </div>
+    <div [ngClass]="{twelve: label, sixteen: !label, error: !validate()}" class="wide field">
+      <input type="hidden" [formControl]="control">
+      <button #button type="button" class="ui toggle {{class}} button field" [attr.disabled]="disabled ? 'disabled' : null" [tabindex]="tabindex"
+        [ngClass]="{icon: primary || secondary, active: control.value}" (click)="click($event)">
+        <i *ngIf="primary || primaryOn" class="icon" [ngClass]="control.value ? (primaryOn || primary) : (primary || primaryOn)"></i>
+        {{(control.value ? (captionOn || caption) : (caption || captionOn)) | zcTranslate}}
+        <i *ngIf="secondary || secondaryOn" class="icon" [ngClass]="control.value ? (secondaryOn || secondary) : (secondary || secondaryOn)"></i>
+      </button>
+    </div>
+  </div>
+</div>

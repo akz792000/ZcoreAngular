@@ -1,0 +1,14 @@
+<div class="ui modal" #modal>
+    <div *ngIf="header" class="header">
+        {{header | zcTranslate}}
+    </div>
+    <div class="content">
+        <div class="ui icon message" style="background: none; box-shadow: none;">
+            <i class="{{icon}} icon"></i>
+             {{content | zcTranslate}}
+        </div>       
+    </div>
+    <div class="actions">
+        <div *ngFor="let button of buttons | zcReverse" class="ui {{button.class}} button">{{button.title | zcTranslate}}</div>
+    </div>
+</div>

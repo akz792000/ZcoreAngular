@@ -1,0 +1,17 @@
+<div class="ui form" [style.visibility]="visible ? 'visible' : 'hidden'">
+  <div class="fields">
+    <div *ngIf="label" class="four wide field" [ngClass]="{required: required}">
+      <label class="ui label">{{label | zcTranslate}}</label>
+    </div>
+    <div [ngClass]="{twelve: label, sixteen: !label, error: !validate()}" class="wide field">
+      <div class="ui icon input">
+        <input #input type="text" 
+          [attr.disabled]="disabled ? 'disabled' : null" [readonly]="readonly ? 'readonly' : null" [tabindex]="tabindex"
+          [formControl]="control" placeholder="{{placeholder | zcTranslate}}" [style.padding-right]="icon ? '2.67142857em' : ''"
+          [zcHint]="!validate() ? ((control.errors | zcKeys)[0] | zcTranslate) : null" (change)="change($event)">
+        <i *ngIf="icon" class="{{icon}} icon right" style="right:0;"></i>
+        <i class="inverted circular calendar link icon" (click)="show()"></i>
+      </div>
+    </div>
+  </div>
+</div>
